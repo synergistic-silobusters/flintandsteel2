@@ -1,0 +1,35 @@
+{
+  "name": "flintandsteel2",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "npm install -g gulp nodemon tap typings typscript",
+    "start": "node dist/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synergistic-silobusters/flintandsteel2.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/synergistic-silobusters/flintandsteel2/issues"
+  },
+  "homepage": "https://github.com/synergistic-silobusters/flintandsteel2#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "chalk": "^1.1.1",
+    "del": "^2.2.0",
+    "express": "^4.13.4",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-util": "^3.0.7",
+    "lodash": "^4.2.1",
+    "mongodb": "^2.1.6",
+    "morgan": "^1.6.1",
+    "tap": "^5.4.2",
+    "tape": "^4.4.0"
+  }
+}
