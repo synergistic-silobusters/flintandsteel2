@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "npm install -g gulp nodemon tap typings typscript",
+    "setup": "npm install -g gulp nodemon tap typings typscript && npm install && typings install",
     "start": "node dist/server/index.js"
   },
   "repository": {
