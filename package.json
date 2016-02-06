@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "npm install -g gulp nodemon tap typings typscript"
+    "setup": "npm install -g gulp nodemon tap typings typscript",
+    "start": "node dist/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,9 @@
     "gulp-nodemon": "^2.0.6",
     "gulp-util": "^3.0.7",
     "lodash": "^4.2.1",
+    "mongodb": "^2.1.6",
     "morgan": "^1.6.1",
     "tap": "^5.4.2",
-    "tape": "^4.4.0",
+    "tape": "^4.4.0"
   }
 }
