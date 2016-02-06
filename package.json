@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tape tmp/**/*.js",
-    "setup": "npm install -g gulp nodemon tap typings typscript && npm install && typings install",
+    "setup": "npm install -g gulp nodemon tap typings typescript && npm install && typings install",
     "start": "node dist/server/index.js"
   },
   "repository": {
