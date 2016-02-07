@@ -1,8 +1,11 @@
 /// <reference path="../../../typings/main.d.ts" />
 
 module SchemaTypes {
-    export interface User {
+    export interface GenericDoc {
         id: string;
+    }
+
+    export interface User extends GenericDoc {
         firstName: string;
         lastName: string;
         fullName: string;
@@ -12,30 +15,25 @@ module SchemaTypes {
         title: string;
     }
 
-    export interface Event {
-        id: string;
+    export interface Event extends GenericDoc {
         name: string;
         location: string;
         startDate: Date;
         endDate: Date;
-
     }
 
-    export interface IdeaLike {
-        id: string;
+    export interface IdeaLike extends GenericDoc {
         userId: string;
     }
 
-    export interface IdeaUpdate {
-        id: string;
+    export interface IdeaUpdate extends GenericDoc {
         text: string;
         authorId: string;
         timeCreated: Date;
         timeModified: Date;
     }
 
-    export interface IdeaComment {
-        id: string;
+    export interface IdeaComment extends GenericDoc {
         parentId: string;
         text: string;
         authorId: string;
@@ -43,8 +41,7 @@ module SchemaTypes {
         timeModified: Date;
     }
 
-    export interface IdeaBack {
-        id: string;
+    export interface IdeaBack extends GenericDoc {
         text: string;
         authorId: string;
         types: Array<string>;
@@ -52,8 +49,7 @@ module SchemaTypes {
         timeModified: Date;
     }
 
-    export interface Idea {
-        id: string;
+    export interface Idea extends GenericDoc {
         title: string;
         authorId: string;
         description: string;
