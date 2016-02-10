@@ -1,32 +1,31 @@
 /// <reference path="../../../typings/main.d.ts" />
 
-import * as SchemaTypes from './schemaTypes';
+import * as SchemaTypes from '../schemaTypes';
 import { Db } from 'mongodb';
+import { OperationStatus } from './operationStatus';
 
-export interface OperationStatus {
-    status: number;
-    message: string;
+export interface DbOperationStatus extends OperationStatus {
     revisedDoc?: SchemaTypes.GenericDoc;
 }
 
 export interface DatabaseAbstractionLayer {
     connect(url: string): Promise<Db>;
-    close();
+    close(): Promise<DbOperationStatus>;
 
     // create
-    create(docType: string, doc: SchemaTypes.GenericDoc): Promise<OperationStatus>;
+    create(docType: string, doc: SchemaTypes.GenericDoc): Promise<DbOperationStatus>;
 
     // read
     getAll(docType: string, fieldsToGet?: Array<string>): Promise<Array<SchemaTypes.GenericDoc>>;
     findOne(docType: string, query: Object): Promise<SchemaTypes.GenericDoc>;
 
     // update
-    updateDoc(docType: string, fieldsToUpdate: Object): Promise<OperationStatus>;
-    setEmbedded(docType: string, ObjToUpdate: Object): Promise<OperationStatus>;
-    push(docType: string, ObjTOAdd: Object): Promise<OperationStatus>;
+    updateDoc(docType: string, fieldsToUpdate: Object): Promise<DbOperationStatus>;
+    setEmbedded(docType: string, ObjToUpdate: Object): Promise<DbOperationStatus>;
+    push(docType: string, ObjTOAdd: Object): Promise<DbOperationStatus>;
 
     // delete
-    deleteDoc(docType: string, docId: string): Promise<OperationStatus>;
-    unsetEmbedded(docType: string, ObjRef: Object): Promise<OperationStatus>;
-    pull(docType: string, ObjToRemove: Object): Promise<OperationStatus>;
+    deleteDoc(docType: string, docId: string): Promise<DbOperationStatus>;
+    unsetEmbedded(docType: string, ObjRef: Object): Promise<DbOperationStatus>;
+    pull(docType: string, ObjToRemove: Object): Promise<DbOperationStatus>;
 }
